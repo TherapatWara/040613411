@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        fieldset{
+            margin: 20px;
+
+            margin-top: -10px;
+        }
+        .vl {
+            width: 500px;
+            height: 780px;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            
+            border-bottom: 2px solid black;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        i{
+            font-size: 15px;
+        }
+
+
+    </style>
+
+    <div class="vl" >
+    <h2 style="margin-left: 20px;">แบบฟร์อมจอวทัวร์</h2>
+        <fieldset >
+            <legend>ข้อมูลทั่วไป</legend>
+            ชื่อ-สกุล:<br>
+            <input type="text" placeholder="กรอกชื่อ-สกุล"> *<br>
+            Emal :<br>
+			<form>
+				<input type="Emal" > *<br>
+			</form>
+            โทรศัพท์ :<br>
+            <input type="text" value="+66"> *<br>
+            ที่อยู่:<br>
+            <textarea cols="40" rows="3">
+            </textarea><br>
+            รหัสไปรษณีย์: <input size="5"><br>
+            รูปผู้จอง : <input type="file">
+        </fieldset>
+
+        <fieldset>
+            <legend>ข้อมูลเข้าสู่ระบบ</legend>
+            Username:<br>
+            <form>
+                <input type="text" name="user" pattern=".{8,}" title="8 or more">
+            </form>
+            <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ ตั้งแต่8 ตัวขึ้นไป</i><br><br>
+            Password :
+            <form>
+                <input type="text" name="password" pattern="[a-zA-Z].{7,}" title="8word or more">
+            </form>
+            <i>ประกอบด้วยอักขระอะไรก็ได้ 8 ตัวขึ้นไป</i>
+        </fieldset>
+
+        <fieldset>
+            <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+            แพคเก็จทัวร์ : <select name="tour">
+                <option>--select--</option>
+                <option value="nokair">Nokair</option>
+                <option value="airasia">Air Asia</option>
+                <option value="thailion">Thai Lion Air</option>
+            </select><br>
+            วันที่เดินทาง : <input type="date"><br>
+            <form>จำนวนผู้เดินทาง : 
+                <input type="text" name="n" pattern="[1-9]{1}([0]{1}|)" title="1-10" size="3">
+            </form>
+            เน้นการท่องเที่ยวแบบใด?<br>
+            <input type="checkbox" name="shopping">ชอปปิ้ง<br>
+            <input type="checkbox" name="natural">ธรรมชาติ<br>
+            <input type="checkbox" name="sea">ทะเล
+
+        </fieldset>
+
+        <p style="margin-left: 20px;">ยอมรับเงื่อนไขและข้อตกลง 
+            <input type="radio" name="agree" checked="checked">I agree
+            <input type="radio" name="agree">I disagree &nbsp &nbsp
+            <button name="complete">จอง</button>
+        </p>
+        
+
+    </div>
+
+    
+</body>
+</html>
