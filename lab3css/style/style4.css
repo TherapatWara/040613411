@@ -1,0 +1,12 @@
+table{
+    border: 0.1rem solid black;
+    font-size: 4cqmin;
+    margin: 50px;
+    padding: 5px;
+   
+}
+td{
+    border: 0.1rem solid black;
+    padding: 3px;
+}
+tr:hover{background-color: aqua;}
