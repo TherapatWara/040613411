@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let student = [
+            {
+                fullname: 'นายตั้งใจ เรียนมาก',
+                age: 18,
+                year: 1,
+                gpa: 3.40,
+                help: true
+            },
+            {
+                fullname: 'นายส่งงาน ตลอดมา',
+                age: 19,
+                year: 2,
+                gpa: 3.00,
+                help: false
+            },
+            {
+                fullname: 'นางสาวใส่ใจ ดีงาม',
+                age: 20,
+                year: 3,
+                gpa: 2.90,
+                help: true
+            },
+            {
+                fullname: 'นายภักดี เล่เหลี่ยม',
+                age: 20,
+                year: 3,
+                gpa: 2.80,
+                help: true
+            },
+            {
+                fullname: 'นางสาวลีโอ เมาจัง',
+                age: 19,
+                year: 2,
+                gpa: 2.40,
+                help: false
+            },
+            {
+                fullname: 'นางสาวไว้ใจ ไม่ได้',
+                age: 20,
+                year: 3,
+                gpa: 2.79,
+                help: false
+            },
+            {
+                fullname: 'นายทองดี ฟันเหลือง',
+                age: 22,
+                year: 4,
+                gpa: 3.90,
+                help: true
+            }
+            
+        ]
+        let pass = []; 
+        let passhelp = [];
+        let passnothelp = [];
+        let npass = [];
+        let notall = [];
+   
+        var j=0,k=0,num=7,l=0,t=0,not=0;
+       
+        for(var i=0;i<7;i++){
+            //pass
+            if(student[i].gpa >= 3.2)
+            {
+                pass[j] = student[i].fullname;j++;num--;
+
+            }
+
+            else if(student[i].year >= 2 && (student[i].help==true) && student[i].gpa >= 2.75){
+                for(var n=0;n<j;n++)
+                {
+                    if(student[i] != pass[n])
+                    {
+                        passhelp[k] = student[i].fullname;k++;num--;
+                   
+                    }
+                }
+            }
+            //fail
+            else if(student[i].year >= 2 && (student[i].help!=true) && student[i].gpa >= 2.75)
+            {
+                passnothelp[l] = student[i].fullname;l++;
+           
+            }
+            else if(student[i].year >= 2 && (student[i].help!=true) && student[i].gpa >= 2.75)
+            {
+                passnothelp[l] = student[i].fullname;l++;
+             
+            }
+            else if(student[i].gpa < 2.75 && student[i].help!=true)
+            {
+                notall[not] = student[i].fullname; not++;
+            }
+        
+        }
+   
+        
+        function alll(){
+            for(var i=0;i<j;i++){
+                console.log( pass[i] + " ผ่านได้เกรดมากกว่า 3.20");
+            }
+            for(var i=0;i<j;i++){
+                console.log(passhelp[i] + " ผ่านได้เกรดมากกว่า 2.75 และ ช่วยงานภาควิชา");
+            }
+            for(var i=0;i<l;i++){
+                console.log(passnothelp[i] + " ไม่ผ่านได้เกรดมากกว่า 2.75 แต่ไม่ช่วยงานภาควิชา");
+            }
+            for(var i=0;i<not;i++){
+                console.log(notall[i] + " ไม่ผ่านทุกกรณี")
+            }
+            console.log(" ");
+           
+        }
+        function only(){
+            for(var i=0;i<j;i++){
+                console.log( pass[i] + " ได้เกรดมากกว่า 3.20");
+                
+            }
+            for(var i=0;i<j;i++){
+                console.log(passhelp[i] + " ได้เกรดมากกว่า 2.75 และ ช่วยงานภาควิชา");
+            }
+            console.log(" ");
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>ตรวจสอบการได้รับทุน</h1>
+    <input type="button" value="ตรวจสอบทั้งหมด" onclick="alll()">
+    <input type="button" value="ตรวจสอบคนได้รับทุน" onclick="only()">
+    
+</body>
+</html>

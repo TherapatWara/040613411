@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text > input{
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function cal(){
+            var x = document.getElementById("x")
+            var xx = parseInt(x.value);
+     
+            var y = document.getElementById("y")
+            var yy = parseInt(y.value);
+           var z
+            z = xx+yy;
+            console.log("hello : "+xx + " " + yy + " " + z)
+            zz.value = z
+        }
+    </script>
+</head>
+<body>
+  
+        <form class="text">
+            <input type="text" id="x"> + <input type="text" id="y"> = <input type="text" id="zz" >
+            <input type="button" style="border: rgb(0, 127, 201) solid;" value="Go Go" onclick="cal()"> 
+        </form>
+        
+   
+</body>
+</html>
