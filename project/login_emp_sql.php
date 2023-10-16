@@ -1,6 +1,5 @@
 <?php include "connect.php"; ?>
 <html>
-    
     <body>
         <?php
             $idemp = $_GET["emp_Id"];

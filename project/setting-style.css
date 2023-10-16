@@ -9,40 +9,9 @@
     padding: 0;
     
 }
-input#serch-name{
-    font-size: 15px;
-    color: #000000;
-    border: white;
-}
-#serch-name{
-    border-radius: 10px;
-    border: 1px solid white;
-    width: 200px;
-    height: 30px;
-    padding-left: 10px;
-}
-form.serch-box{
-    background-color: #ffd79b;
-    text-align: right;
-    padding-bottom: 15px;
-  
-}
 
-.serch-box input{
-    margin-right: 10px;
-   
-    
 
-    
-}
-.serch-box button i{
-     color: #004731;
- }
 
-.serch-box button {
-    margin-right: 20px;
-    
-}
 
 .input-login {
     margin: 10px 0px 10px 0px;
@@ -58,6 +27,7 @@ form.serch-box{
 
 body {
     margin: 0;
+    background-color: #ffd79b;
 }
   
 #pricetag{
@@ -120,10 +90,10 @@ main {
 }
   
 .footer {
-    background-color: #006142;
+    background-color: #f1f1f1;
     padding: 10px;
     text-align: center;
-    color: white;
+
 }
 /* style.css */
 header {
@@ -139,7 +109,7 @@ main {
     justify-content: space-between; /* ใช้ justify-content เพื่อกระจายเมนูให้เต็มแถว */
 }
 
-.menu {
+.menuu {
     flex-wrap: wrap; /* ใช้ flex-wrap เพื่อให้แสดงเมนูในแนวนอนและขึ้นรายการใหม่เมื่อครบ 3 รายการ */
     border: 1px solid #ccc;
     padding: 10px;
@@ -151,11 +121,11 @@ main {
     text-align: center;
 }
 
-.menu:hover {
+.menuu:hover {
     transform: scale(1.02); 
 }
 
-.menu img {
+.menuu img {
     max-width: 100%;
     height: auto;
     display: block; /* ปรับรูปภาพให้แสดงตรงกลาง */
@@ -195,27 +165,29 @@ main {
 #center-button:active{
     opacity: 0.1; /* สีพื้นหลังของปุ่มเมื่อ hover */
 }
-
+.footer{
+    background-color: #006142;
+}
 @media (max-width: 700px) {
-    .menu {
+    .menuu {
         width: calc(100% - 20px); 
     }
 }
 
 @media (min-width: 701px){
-    .menu {
+    .menuu {
         width: calc(46% - 20px); 
     }
 }
 
 @media (min-width: 1101px){
-    .menu {
+    .menuu {
         width: calc(30% - 20px);
     }
 }
 
 @media (min-width: 1440px){
-    .menu {
+    .menuu {
         width: calc(23% - 20px); 
     }
 }
@@ -240,24 +212,121 @@ main {
     background-color: #FBB813;
     
 }
-.pagination{
-    background-color: #ffd79b;
+
+
+.menu{
+    margin-top: 5em;
+    width: auto;
+   padding: 3em;
+   padding-top: 8em;
+   padding-bottom: 8em;
+   background-color: #ffffff69;
+   text-align: center;
+   
+}
+.menu a{
+    margin: 1em;
     
 }
-
-.pagination a{
-    text-decoration: none;
-    border: 0.1rem ;
-    color: #000000;
-   background-color: white;
-    border-radius: 15px;
-   padding: 5px;
-   font-size: 1.5em;
-    margin-left: 1em;
-    
+.menu  button{
+    padding:3.5em;
+    border-radius: 20px ;
+    border: none;
+    font-size: 30px;
+    font-weight: bolder;
 }
-
-.pagination a:hover{
+.menu  button:hover{
     background-color: #FBB813;
-    border: 0.1rem solid black;
 }
+
+.inserT{
+    border: 0.1rem solid rgb(255, 255, 255);
+    border-radius: 30px;
+    width: 50%;
+    padding: 1em;
+    margin: 10px;
+    background-color: #ffffff6b;
+    font-size: 30px;
+    
+}
+.inserT > form > input{
+    font-size: 20px;
+    border-radius: 5px;
+    margin-left: 5px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+
+.add{
+    background-color: #3D533B;
+    color:white;
+}
+
+.add:hover{
+    background-color: #3d533b7e;
+    color:white;
+}
+
+.back{
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+
+
+.back:hover{
+    background-color: #FBB813;
+}
+
+.update{
+    padding: 10px; 
+    text-align: center;
+}
+.update form{
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.411);
+    padding: 2em;
+    width: 50%;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+.update input{
+    margin: 5px;
+    font-size: 20px;
+}
+
+.update .fix{
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.fix{
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-color: white;
+    padding: 5px;
+}
+
+.fix:hover{
+    background-color:#FBB813;
+
+}
+

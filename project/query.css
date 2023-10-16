@@ -48,26 +48,56 @@ body {
   
 
 .topnav {
-   overflow: hidden;
+    overflow: hidden;
     font-weight: bold;
     font-size: 20px;
-    background-color: #3D533B;
+    background-color: #004731;;
+    
 }
   
+.topnav button i{
+   color: white;
+}
+.topnav .linkbutt{
+    float: left;
+    display: block;
+    color: #ffffff;;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+a .cartbutt {
+    
+    color: #00EDA2;
+   
+    
+    
+}
+
+.topnav .cartbutt {
+    float: right;
+    color: #ffffff;
+    text-align: center;
+    padding: 27px 16px;
+    
+    
+}
+.topnav .linkbutt:hover {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 13px; 
+    color: #FBB813;
+   
+}
+
 .topnav a {
-     float: left;
+    float: left;
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
-  
-  
-.topnav a:hover {
-    border-bottom: 1px solid ;
-    padding-bottom: 5px; 
-    color: #FBB813;
+    
 }
   
 

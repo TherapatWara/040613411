@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2023 at 07:27 AM
+-- Generation Time: Oct 07, 2023 at 10:08 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -30,16 +30,54 @@ SET time_zone = "+00:00";
 CREATE TABLE `bill` (
   `bill_Id` int(11) NOT NULL,
   `bill_result` int(11) NOT NULL,
-  `bill_Date` date NOT NULL,
-  `bill_Time` time NOT NULL
+  `bill_Date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `bill`
 --
 
-INSERT INTO `bill` (`bill_Id`, `bill_result`, `bill_Date`, `bill_Time`) VALUES
-(1, 30, '2023-10-10', '19:59:06');
+INSERT INTO `bill` (`bill_Id`, `bill_result`, `bill_Date`) VALUES
+(1, 30, '2023-10-10 12:59:06'),
+(2, 100, '2023-10-03 23:20:59'),
+(3, 150, '2023-10-05 06:16:19'),
+(4, 60, '2023-03-23 15:39:27'),
+(5, 70, '2023-04-07 16:17:30'),
+(6, 75, '2023-04-07 16:17:30'),
+(7, 70, '0000-00-00 00:00:00'),
+(8, 75, '2023-05-03 16:17:30'),
+(9, 70, '2023-05-04 16:17:30'),
+(10, 60, '2023-05-05 13:17:30'),
+(16, 60, '2023-10-17 07:40:48'),
+(17, 30, '2023-10-12 13:32:08'),
+(18, 60, '2023-10-04 06:56:32'),
+(19, 40, '2023-10-03 17:00:00'),
+(20, 150, '2023-10-04 07:43:15'),
+(21, 75, '2023-10-04 07:43:47'),
+(22, 100, '2023-10-04 07:44:12'),
+(23, 110, '2023-10-04 07:50:08'),
+(24, 110, '2023-10-04 07:50:48'),
+(25, 110, '2023-10-04 07:51:41'),
+(26, 110, '2023-10-04 07:51:53'),
+(27, 110, '2023-10-04 07:51:54'),
+(28, 50, '2023-10-04 08:30:22'),
+(29, 50, '2023-10-04 08:30:51'),
+(30, 50, '2023-10-04 08:31:44'),
+(31, 50, '2023-10-04 08:31:48'),
+(32, 50, '2023-10-04 08:32:06'),
+(33, 50, '2023-10-04 08:32:49'),
+(34, 50, '2023-10-04 08:32:56'),
+(35, 50, '2023-10-04 08:33:39'),
+(36, 40, '2023-10-04 08:34:22'),
+(37, 85, '2023-10-04 08:38:17'),
+(38, 65, '2023-10-04 08:40:23'),
+(39, 115, '2023-10-04 08:40:57'),
+(40, 30, '2023-10-04 08:51:14'),
+(41, 60, '2023-10-06 12:41:01'),
+(42, 85, '2023-10-06 12:41:51'),
+(43, 60, '2023-10-07 07:54:03'),
+(44, 90, '2023-10-07 07:54:26'),
+(45, 65, '2023-10-07 07:54:55');
 
 -- --------------------------------------------------------
 
@@ -48,21 +86,21 @@ INSERT INTO `bill` (`bill_Id`, `bill_result`, `bill_Date`, `bill_Time`) VALUES
 --
 
 CREATE TABLE `employee` (
-  `emp_Id` int(11) NOT NULL,
   `emp_Name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `emp_Phone` int(10) NOT NULL,
-  `emp_DOB` date NOT NULL
+  `emp_DOB` date NOT NULL,
+  `emp_Id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`emp_Id`, `emp_Name`, `emp_Phone`, `emp_DOB`) VALUES
-(1000, 'Sebastian', 965430021, '2000-06-06'),
-(1001, 'Alexander', 866435621, '1999-02-05'),
-(1002, 'Henry', 690983564, '2001-09-17'),
-(1003, 'Jacob', 800122423, '2001-01-13');
+INSERT INTO `employee` (`emp_Name`, `emp_Phone`, `emp_DOB`, `emp_Id`) VALUES
+('Sebastian', 965430021, '2000-06-06', 1000),
+('Alexander', 866435621, '1999-02-05', 1001),
+('Henry', 690983564, '2001-09-17', 1002),
+('Jacob', 800122423, '2001-01-13', 1003);
 
 -- --------------------------------------------------------
 
@@ -83,7 +121,47 @@ CREATE TABLE `makings` (
 --
 
 INSERT INTO `makings` (`making_No`, `making_detail`, `emp_Id`, `bill_Id`, `menu_No`) VALUES
-(1, '-', 1000, 1, 1);
+(1, 'cool', 1000, 1, 1),
+(2, 'cool', 1001, 2, 8),
+(3, 'cool', 1001, 2, 8),
+(4, 'cool', 1001, 3, 8),
+(5, 'cool', 1001, 3, 8),
+(6, 'cool', 1001, 3, 8),
+(7, 'cool', 1002, 4, 1),
+(8, 'cool', 1002, 4, 2),
+(9, '', 1000, 5, 11),
+(10, '', 1000, 5, 17),
+(11, '', 1002, 6, 5),
+(12, '', 1002, 6, 7),
+(13, '', 1003, 7, 21),
+(14, '', 1003, 7, 20),
+(15, '', 1003, 8, 9),
+(16, '', 1003, 8, 6),
+(17, '', 1001, 9, 23),
+(18, '', 1001, 9, 24),
+(19, '', 1000, 10, 13),
+(20, '', 1000, 10, 13),
+(21, '', 1003, 7, 21),
+(22, '', 1000, 34, 8),
+(23, '', 1000, 35, 6),
+(24, '', 1000, 36, 17),
+(25, '', 1000, 36, 18),
+(26, '', 1000, 37, 1),
+(27, '', 1000, 37, 4),
+(28, '', 1000, 38, 6),
+(29, '', 1000, 38, 9),
+(30, '', 1000, 38, 6),
+(31, '', 1000, 39, 1),
+(32, '', 1000, 40, 1),
+(33, '', 1000, 40, 2),
+(34, '', 1001, 41, 5),
+(35, '', 1001, 41, 8),
+(36, '', 1000, 42, 1),
+(37, '', 1000, 42, 2),
+(38, '', 1000, 43, 7),
+(39, '', 1000, 43, 8),
+(40, '', 1000, 44, 9),
+(41, '', 1000, 44, 11);
 
 -- --------------------------------------------------------
 
@@ -165,19 +243,19 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `bill_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
+  MODIFY `emp_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
 
 --
 -- AUTO_INCREMENT for table `makings`
 --
 ALTER TABLE `makings`
-  MODIFY `making_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `making_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `menu`
